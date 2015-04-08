@@ -1,0 +1,29 @@
+$main-bg-color:#313C42;
+$main-container-color:#666161;
+
+body{
+	background-color:white;
+	color:black;
+	font-family: 'Orbitron', sans-serif;
+}
+
+h1{
+	margin-left:10%;
+	margin-top:10vh;
+	text-align:center;
+	width:80%;
+}
+
+.team{
+	background-color:$main-container-color;
+	height:250px;
+}
+
+
+@media (min-width: 980px) {
+	
+	.team{
+		margin-top:8vh;
+	}
+
+ }
