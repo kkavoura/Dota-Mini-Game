@@ -1,5 +1,5 @@
 body {
-  background-color: white;
+  background-image: url("../images/footer_lodyas.png");
   color: black;
   font-family: 'Orbitron', sans-serif; }
 
@@ -9,11 +9,42 @@ h1 {
   text-align: center;
   width: 80%; }
 
+img {
+  display: block;
+  float: left;
+  height: auto;
+  width: 30%; }
+
 .team {
-  background-color: #666161;
+  background-color: rgba(51, 51, 51, 0.63);
   height: 250px; }
 
+.team.loser {
+  background-color: rgba(165, 19, 19, 0.5); }
+
+.team.winner {
+  background-color: rgba(0, 128, 0, 0.5); }
+
+.winner-button {
+  height: 30%;
+  width: 40%;
+  margin-left: 30%;
+  margin-top: 10%; }
+
+@media (max-width: 979px) {
+  #radiant img:first-child, #dire img:first-child {
+    margin-left: 5%; }
+  #radiant img:nth-child(4), #dire img:nth-child(4) {
+    margin-left: 20%; } }
 @media (min-width: 980px) {
+  img {
+    width: 20%; }
+
+  #newGameButton {
+    margin-left: 45%;
+    margin-top: 10vh;
+    width: 10%; }
+
   .team {
     margin-top: 8vh; } }
 

@@ -5,7 +5,7 @@ $(document).ready(function(){
 	// 	console.log(data);
 	// });
 	var desiredMatches = getMatchesOfType(0,7);
-	mySuperMatch = desiredMatches[5];
+	mySuperMatch = desiredMatches[0];
 
 })
 
@@ -40,20 +40,39 @@ function getMatchesOfType(){
 			}
 		}
 	}
-	console.log(desiredMatches);
 	return(desiredMatches);
 }
 
-
 //Returns an array of heroes that were played in a specific match
 //IN: match 
-//OUT: array of hero ids
-function getHeroes(match){
+//OUT: array of heros present in the match
+function getMatchHeroes(match){
 	var players = match.players,
 		matchHeroes = [];
 
 	for (var i=0; i<players.length; i++){
-		matchHeroes.push(players[i].hero_id);
+		matchHeroes.push(getHero(players[i].hero_id));
 	}
-	console.log(matchHeroes);
+	return matchHeroes;
 }
+
+//Returns the hero object based on the hero_id
+//IN: int representing hero_id
+//OUT: hero object
+function getHero(id){
+	var heroesLength = heroes.length;
+	for(var i=0; i<heroesLength; i++){
+		if(heroes[i].id == id){
+			return heroes[i];
+		}
+	}
+}
+
+//Returns the result of the current match 
+//IN: int match_id
+//OUT: bool team victory (T=radiant win, F=dire win)
+function getMatchResult(matchID){
+	//API call for getMatchDetails will be here
+	return sampleMatchDetails.result.radiant_win;
+}
+

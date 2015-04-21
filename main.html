@@ -8,7 +8,9 @@
         <link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="styles/my_style.css">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-		<script type="text/javascript" src="scripts/req.js"></script>
+        <script type="text/javascript" src="scripts/sampleMatchDetails.js"></script>
+        <script type="text/javascript" src="scripts/dotaGame_logic.js"></script>
+		<script type="text/javascript" src="scripts/dotaGame_ui.js"></script>       
         <script type="text/javascript" src="scripts/matches.js"></script>
         <script type="text/javascript" src="scripts/heroes.js"></script>
     </head>
@@ -19,14 +21,32 @@
                 <div class="col-xs-12 col-md-6">
                     <div class="team">
                         <h2>Team 1</h2>
+                        <div class="heroContainer" id="radiant">
+                            <p>
+                            <img/>
+                            <img/>
+                            <img/>
+                            <img/>
+                            <img/>
+                        </div>
+                        <button type="button" class="btn-success btn-large winner-button" id="radiantWinner">Winner!</button>
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <div class="team">
                         <h2>Team 2</h2>
+                        <div class="heroContainer" id="dire">
+                            <img/>
+                            <img/>
+                            <img/>
+                            <img/>
+                            <img/>
+                        </div>
+                        <button type="button" class="btn-success btn-large winner-button" id="direWinner">Winner!</button>
                     </div>
                 </div>
             </div>
         </div>
+       <button type="button" class="btn-primary btn-large" id="newGameButton">New Game</button>
     </body>
 </html>
