@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <title>Dota 2 Predictor Mini-Game</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
         <link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="styles/my_style.css">
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script type="text/javascript" src="scripts/sampleMatchDetails.js"></script>
         <script type="text/javascript" src="scripts/dotaGame_logic.js"></script>
 		<script type="text/javascript" src="scripts/dotaGame_ui.js"></script>       
-        <script type="text/javascript" src="scripts/matches.js"></script>
         <script type="text/javascript" src="scripts/heroes.js"></script>
     </head>
     <body>
@@ -29,7 +29,7 @@
                             <img/>
                             <img/>
                         </div>
-                        <button type="button" class="btn-success btn-large winner-button" id="radiantWinner">Winner!</button>
+                        <button type="button" class="btn-success btn-lg winner-button" id="radiantWinner">Winner!</button>
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-6">
@@ -42,11 +42,34 @@
                             <img/>
                             <img/>
                         </div>
-                        <button type="button" class="btn-success btn-large winner-button" id="direWinner">Winner!</button>
+                        <button type="button" class="btn-success btn-lg winner-button" id="direWinner">Winner!</button>
                     </div>
                 </div>
             </div>
+
+            <div class="row" id="extrasButtonContainer">
+                <div class="col-xs-12 col-sm-3">               
+                    <button type="button" class="btn btn-primary btn-lg extra-button" id="nextButton">Next</button>
+                </div>
+                <div class="col-xs-12 col-sm-3">
+                    <a href="" target="_blank"><button type="button" class=" extra-button btn btn-primary btn-lg" data-toggle="dropdown" aria-expanded="false" id="detailsButton">Match Details</button></a>
+                </div>
+                <div class="btn-group col-xs-12 col-sm-3">               
+                    <div>
+                        <button type="button" class=" extra-button btn btn-primary btn-lg dropdown-toggle" id="optionsButton" data-toggle="dropdown" aria-expanded="false">
+                            Options <span class="caret"></span>
+                        </button>
+                        <ul class=" dropdown dropdown-menu" role="menu">
+                            <li><a href="#"><input type="checkbox" checked="checked"/>&nbspRanked</a></li>
+                            <li><a href="#"><input type="checkbox" checked="checked"/>&nbspCasual</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-3">               
+                    <button type="button" class="extra-button btn btn-primary btn-lg " id="newGameButton">New Game</button>
+                </div>            
+            </div>
+
         </div>
-       <button type="button" class="btn-primary btn-large" id="newGameButton">New Game</button>
     </body>
 </html>

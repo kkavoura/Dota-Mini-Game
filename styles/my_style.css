@@ -3,6 +3,12 @@ body {
   color: black;
   font-family: 'Orbitron', sans-serif; }
 
+.extra-button {
+  width: 100%; }
+
+#extrasButtonContainer {
+  margin-top: 5vw; }
+
 h1 {
   margin-left: 10%;
   margin-top: 10vh;
@@ -14,6 +20,9 @@ img {
   float: left;
   height: auto;
   width: 30%; }
+
+#optionsButton {
+  width: 100%; }
 
 .team {
   background-color: rgba(51, 51, 51, 0.63);
@@ -39,11 +48,6 @@ img {
 @media (min-width: 980px) {
   img {
     width: 20%; }
-
-  #newGameButton {
-    margin-left: 45%;
-    margin-top: 10vh;
-    width: 10%; }
 
   .team {
     margin-top: 8vh; } }
