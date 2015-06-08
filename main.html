@@ -10,8 +10,8 @@
         <link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="styles/my_style.css">
         <script type="text/javascript" src="scripts/sampleMatchDetails.js"></script>
-        <script type="text/javascript" src="scripts/dotaGame_logic.js"></script>
-		<script type="text/javascript" src="scripts/dotaGame_ui.js"></script>       
+        <script type="text/javascript" src="scripts/dota.js"></script>
+		<script type="text/javascript" src="scripts/controller.js"></script>       
         <script type="text/javascript" src="scripts/heroes.js"></script>
     </head>
     <body>
@@ -29,7 +29,7 @@
                             <img/>
                             <img/>
                         </div>
-                        <button type="button" class="btn-success btn-lg winner-button" id="radiantWinner">Winner!</button>
+                        <button type="button" class="btn-success btn-lg winner-button hidden" id="radiantWinner">Winner!</button>
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-6">
@@ -42,17 +42,19 @@
                             <img/>
                             <img/>
                         </div>
-                        <button type="button" class="btn-success btn-lg winner-button" id="direWinner">Winner!</button>
+                        <button type="button" class="btn-success btn-lg winner-button hidden" id="direWinner">Winner!</button>
                     </div>
                 </div>
             </div>
+
+            <div id="scoreContainer"></div>
 
             <div class="row" id="extrasButtonContainer">
                 <div class="col-xs-12 col-sm-3">               
                     <button type="button" class="btn btn-primary btn-lg extra-button" id="nextButton">Next</button>
                 </div>
                 <div class="col-xs-12 col-sm-3">
-                    <a href="" target="_blank"><button type="button" class=" extra-button btn btn-primary btn-lg" data-toggle="dropdown" aria-expanded="false" id="detailsButton">Match Details</button></a>
+                    <button type="button" class=" extra-button btn btn-primary btn-lg" data-toggle="dropdown" aria-expanded="false" id="detailsButton">Match Details</button>
                 </div>
                 <div class="btn-group col-xs-12 col-sm-3">               
                     <div>
