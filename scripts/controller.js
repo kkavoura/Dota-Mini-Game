@@ -1,3 +1,7 @@
+toastr.options={
+	"positionClass" : "toast-top-center",
+	"timeOut" : "1500"
+}
 
 var controller = (function(){
 	var currentHeroes,
@@ -76,10 +80,12 @@ var controller = (function(){
 				if(radiantVictory==radiantVictoryPredicted){
 					game.addCorrectGuess();
 					console.log("CORRECT");
+					toastr.success("Correct!");
 				}
 				else{
 					game.addIncorrectGuess();
 					console.log("INCORRECT");
+					toastr.error("Incorrect!");
 				}
 				controller.updateScoreDisplay();
 			});
