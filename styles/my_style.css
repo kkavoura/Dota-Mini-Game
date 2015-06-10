@@ -7,7 +7,8 @@ body {
   width: 100%; }
 
 #extrasButtonContainer {
-  margin-top: 5vw; }
+  margin-top: 5vw;
+  transition: 1s; }
 
 h1 {
   margin-left: 10%;
@@ -25,7 +26,10 @@ img {
   width: 100%; }
 
 #scoreContainer {
-  font-size: 2em; }
+  margin-left: 40%;
+  margin-top: 8%;
+  font-size: 2em;
+  width: 20; }
 
 .team {
   background-color: rgba(51, 51, 51, 0.63);

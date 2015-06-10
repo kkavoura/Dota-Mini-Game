@@ -13,6 +13,7 @@ body{
 
 #extrasButtonContainer{
 	margin-top:5vw;
+	transition:1s;
 }
 
 h1{
@@ -34,7 +35,10 @@ img{
 }
 
 #scoreContainer{
+	margin-left:40%;
+	margin-top:8%;
 	font-size:2em;
+	width:20;
 }
 
 .team{

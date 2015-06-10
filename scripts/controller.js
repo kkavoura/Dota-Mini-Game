@@ -52,6 +52,7 @@ var controller = (function(){
 			var _this = this;
 			$('#newGameButton').on("click", function(){
 				_this.newGame();
+				$(".nextButton").prop("disabled", true);
 			});
 			$("#nextButton").on("click", function(){
 				game.nextMatch();
@@ -61,30 +62,28 @@ var controller = (function(){
 						radiantVictory = res;
 						$winner_button.removeClass("hidden");
 					});
+				$(this).prop("disabled", true);
+
 			});
 			$("#detailsButton").on("click", function(){
 				window.open("http://www.dotabuff.com/matches/"+game.getCurrentMatchID());
 			});
 			$winner_button.on("click", function(){
+				$("#nextButton").prop("disabled", false);
 				$this = $(this);
 				$winner_button.addClass("hidden");
 				if($this.attr("id")=="radiantWinner"){
-					console.log("RADIANT");
 					radiantVictoryPredicted = true;
 				}
 				else{
 					radiantVictoryPredicted=false;
-					console.log("DIRE");
 				}
-				console.log("PREDICTION:"+radiantVictoryPredicted+"   RESULT:"+radiantVictory);
 				if(radiantVictory==radiantVictoryPredicted){
 					game.addCorrectGuess();
-					console.log("CORRECT");
 					toastr.success("Correct!");
 				}
 				else{
 					game.addIncorrectGuess();
-					console.log("INCORRECT");
 					toastr.error("Incorrect!");
 				}
 				controller.updateScoreDisplay();
