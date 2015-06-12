@@ -9,9 +9,11 @@ var controller = (function(){
 		radiantVictoryPredicted;
 	return{
 		newGame: function(){
+			$("#scoreContainer").text("");
 			var _this = this;
 			game.init()
 				.done(function(){
+					game.goToFirstMatch();
 					_this.displayHeroes();
 					game.getMatchDetails()
 						.done(function(res){

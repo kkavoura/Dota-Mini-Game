@@ -9,6 +9,7 @@ var game = (function(){
 			var deferred = $.Deferred();
 			$.getJSON("/matches")
 				.done(function(res){
+					myFilteredMatches=[];
 					//filter matches
 					var myMatches = JSON.parse(res),
 						myMatchesArray = myMatches.result.matches;
@@ -84,6 +85,9 @@ var game = (function(){
 		},
 		getCurrentMatchID: function(){
 			return myFilteredMatches[currentMatch].match_id;
+		},
+		goToFirstMatch: function(){
+			currentMatch = 0;
 		}
 	};
 })();
