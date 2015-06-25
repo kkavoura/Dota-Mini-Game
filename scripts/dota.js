@@ -14,6 +14,7 @@ var game = (function(){
 					var myMatches = JSON.parse(res),
 						myMatchesArray = myMatches.result.matches;
 
+
 					myMatchesArray.forEach(function(match){
 						for(var i=0; i<desiredMatchTypes.length; i++){
 							if(match.lobby_type == desiredMatchTypes[i]){
@@ -22,7 +23,7 @@ var game = (function(){
 							}
 						}
 					});
-					// console.log(myFilteredMatches);					
+					 console.log("LENGTH ", myFilteredMatches.length);					
 					deferred.resolve(myFilteredMatches); //pass filtered matches  in there
 				});
 			return deferred.promise();
@@ -71,8 +72,13 @@ var game = (function(){
 			return matchHeroes;
 		},
 		nextMatch: function(){
-			var currentMatchDetails;
-			currentMatch++;		
+			// var currentMatchDetails;
+			if(currentMatch<myFilteredMatches.length){
+				currentMatch++;		
+			}
+			else{
+				//API call for new matches here
+			}
 		},
 		getMatchDetails: function(){
 			var deferred = $.Deferred();
@@ -88,6 +94,9 @@ var game = (function(){
 		},
 		goToFirstMatch: function(){
 			currentMatch = 0;
+		},
+		getNumberOfMatches: function(){
+			return myFilteredMatches.length;
 		}
 	};
 })();

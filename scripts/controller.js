@@ -57,6 +57,7 @@ var controller = (function(){
 				$(".nextButton").prop("disabled", true);
 			});
 			$("#nextButton").on("click", function(){
+				console.log("MATCHES LENGTH", game.getNumberOfMatches());
 				game.nextMatch();
 				_this.displayHeroes();
 				game.getMatchDetails()
