@@ -37,12 +37,13 @@ img{
 	margin-left:40%;
 	margin-top:8%;
 	font-size:2em;
-	width:20;
+	width:20%;
 }
 
 .team{
 	background-color:rgba($main-container-color, 0.63);
-	height:250px;
+	height:auto;
+	min-height:250px;
 }
 
 .team.loser{
@@ -58,7 +59,9 @@ img{
 	width: 40%;
 	margin-left: 30%;
 	margin-top: 10%;
+	margin-bottom:10%;
 }
+
 
 @media(max-width:979px){
 	#radiant, #dire{

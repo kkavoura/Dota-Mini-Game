@@ -6,7 +6,12 @@ var request = require('request'),
 module.exports = function(app){
 	app.get("/matches", function(req, res){
 		request("https://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/V001/?key="+key, function(err, dotaRes, body) {
-			res.json(body);
+			if(dotaRes.statusCode === 200) {
+				res.json(body);
+			}
+			else {
+				res.sendStatus(dotaRes.statusCode);
+			}
 		});
 	});
 

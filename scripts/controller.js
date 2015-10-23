@@ -8,6 +8,9 @@ var controller = (function(){
 		radiantVictory,
 		radiantVictoryPredicted;
 	return{
+		/**
+		 * Initializes a new game
+		 */
 		newGame: function(){
 			$("#scoreContainer").text("");
 			var _this = this;
@@ -19,10 +22,16 @@ var controller = (function(){
 						.done(function(res){
 							radiantVictory = res;
 						});
-					$winner_button.removeClass("hidden");
+					console.log("NEW GAME MAKING BUTTON VISIBLE");	
+					$winner_button.removeClass("vis-hidden");
+					// $winner_button.css("opacity", "1");
 				});
 		},
+		/**
+		 * Displays the heroes for the current game
+		 */
 		displayHeroes: function(){
+			console.log("Displaying heroes");
 			var matchHeroes = game.getMatchHeroes();
 			for(var i=0; i<10; i++){
 				if(matchHeroes[i]){		
@@ -40,41 +49,54 @@ var controller = (function(){
 					else{
 						$("#dire img:nth-child("+ (i-4) +")").attr("src", "images/Question_mark.png");	
 					}
-					console.log("Player #", i ,"undefined");
 				}
 			}
 		},
+		/**
+		 * Updates to display the current score
+		 */
 		updateScoreDisplay: function(){
 			var score = game.getScore();
 
 			$("#scoreContainer").text(score.correctGuesses+"/"+score.totalGuesses+" correct ("
 				+((score.correctGuesses/score.totalGuesses)*100).toFixed(2)+"%)");
 		},
+		/**
+		 * Sets the event handlers for interactive elements on the page
+		 */
 		setHandlers: function(){
 			var _this = this;
 			$('#newGameButton').on("click", function(){
 				_this.newGame();
 				$(".nextButton").prop("disabled", true);
 			});
+
 			$("#nextButton").on("click", function(){
-				console.log("MATCHES LENGTH", game.getNumberOfMatches());
-				game.nextMatch();
-				_this.displayHeroes();
+				$(this).prop("disabled", true);
+				game.nextMatch().done(function(){
+					_this.displayHeroes();
+				});
 				game.getMatchDetails()
 					.done(function(res){
 						radiantVictory = res;
-						$winner_button.removeClass("hidden");
+						// $winner_button.css("opacity", "1");
+						$winner_button.removeClass("vis-hidden");
 					});
-				$(this).prop("disabled", true);
-
 			});
+
 			$("#detailsButton").on("click", function(){
 				window.open("http://www.dotabuff.com/matches/"+game.getCurrentMatchID());
 			});
+
+			/**
+			 * Upon selecting a winning team, check if prediction is correct, then update
+			 * score accordingly and display corresponding toast
+			 */
 			$winner_button.on("click", function(){
 				$("#nextButton").prop("disabled", false);
 				$this = $(this);
-				$winner_button.addClass("hidden");
+				$winner_button.addClass("vis-hidden");
+				// $winner_button.css("opacity", "0");
 				if($this.attr("id")=="radiantWinner"){
 					radiantVictoryPredicted = true;
 				}
