@@ -44,10 +44,10 @@ var controller = (function(){
 				}
 				else{
 					if(i<5){
-						$("#radiant img:nth-child("+ (i+1) +")").attr("src", "images/Question_mark.png");
+						$("#radiant img:nth-child("+ (i+1) +")").attr("src", "images/no_hero.png");
 					}
 					else{
-						$("#dire img:nth-child("+ (i-4) +")").attr("src", "images/Question_mark.png");	
+						$("#dire img:nth-child("+ (i-4) +")").attr("src", "images/no_hero.png");	
 					}
 				}
 			}

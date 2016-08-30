@@ -553,5 +553,10 @@ heroes = [
             "name": "winter_wyvern",
             "id": 112,
             "localized_name": "Winter Wyvern"
+        },
+        {
+            "name": "npc_dota_hero_arc_warden",
+            "id": 113,
+            "localized_name": "Arc Warden"
         }
     ]
