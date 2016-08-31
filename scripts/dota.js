@@ -12,7 +12,7 @@ var game = (function(){
 		 */
 		getFilteredMatches = function(){
 			var deferred = $.Deferred();
-			$.getJSON("/matches")
+			$.getJSON("matches")
 				.done(function(res){
 					myFilteredMatches=[];
 					//filter matches
@@ -114,7 +114,7 @@ var game = (function(){
 		 */
 		getMatchDetails: function(){
 			var deferred = $.Deferred();
-			$.getJSON("/matchDetails/"+myFilteredMatches[currentMatch].match_id+"")
+			$.getJSON("matchDetails/"+myFilteredMatches[currentMatch].match_id+"")
 				.done(function(res){
 					var myMatch = JSON.parse(res);
 					deferred.resolve(myMatch.result.radiant_win);
